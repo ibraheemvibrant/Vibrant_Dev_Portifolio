@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Vibrant Tech Solutions | Ibrahim M'mangeni - Full Stack Developer</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Portfolio of Ibrahim M'mangeni, a Full Stack Developer specializing in React, Next.js, Python, and modern web technologies. Founder of Vibrant Tech Solutions.">
+  <meta name="keywords" content="Full Stack Developer, React, Next.js, Python, Tailwind CSS, Web Development, Portfolio, Vibrant Tech Solutions, Malawi">
+  <meta name="author" content="Ibrahim M'mangeni">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Vibrant Tech Solutions | Ibrahim M'mangeni - Full Stack Developer">
+  <meta property="og:description" content="Full Stack Portfolio showcasing modern web applications, emergency alert systems, and innovative digital solutions.">
+  <meta property="og:image" content="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 200'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%236d28d9;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23facc15;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='200' fill='url(%23grad)'/%3E%3Ctext x='50%25' y='50%25' font-size='28' fill='white' text-anchor='middle' dy='.3em' font-weight='bold'%3EVibrant Tech Solutions%3C/text%3E%3C/svg%3E">
+  <meta property="og:url" content="https://vibranttechsolutions.netlify.app">
+  <meta name="twitter:card" content="summary_large_image">
+  
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Ibrahim M'mangeni",
+      "jobTitle": "Full Stack Developer & Founder",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Vibrant Tech Solutions"
+      },
+      "url": "https://vibranttechsolutions.netlify.app",
+      "email": "ibraheemvibrant@gmail.com",
+      "telephone": "+265981142835",
+      "knowsAbout": ["React", "Next.js", "Python", "Node.js", "Tailwind CSS", "Full Stack Development"],
+      "sameAs": [
+        "https://github.com/ibraheemvibrant",
+        "https://www.linkedin.com/in/ibrahim-mmangeni-85aa88282"
+      ]
+    }
+  </script>
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+      color: #f3f4f6;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #1f1b3b;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(135deg, #facc15, #eab308);
+      border-radius: 10px;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 0;
+    }
+
+    /* Header & Navbar */
+    header {
+      background: rgba(15, 12, 41, 0.95);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(250, 204, 21, 0.2);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    }
+
+    .header-flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0.8rem 0;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .logo-img {
+      background: linear-gradient(135deg, #facc15, #eab308);
+      border-radius: 14px;
+      width: 45px;
+      height: 45px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 1.6rem;
+      color: #0f0c29;
+      box-shadow: 0 4px 15px rgba(250,204,21,0.3);
+      transition: transform 0.3s;
+    }
+    .logo-img:hover {
+      transform: rotate(5deg) scale(1.05);
+    }
+
+    .logo-text {
+      font-weight: 800;
+      font-size: 1.4rem;
+      letter-spacing: -0.5px;
+      background: linear-gradient(135deg, #ffffff, #facc15);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .logo-text span {
+      color: #facc15;
+      background: none;
+      -webkit-background-clip: unset;
+      background-clip: unset;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    nav ul li a {
+      color: #e2e8f0;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s;
+      position: relative;
+    }
+    nav ul li a:before {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #facc15;
+      transition: width 0.3s;
+    }
+    nav ul li a:hover:before {
+      width: 100%;
+    }
+    nav ul li a:hover {
+      color: #facc15;
+    }
+
+    .menu-icon {
+      display: none;
+      font-size: 1.8rem;
+      background: none;
+      border: none;
+      color: #facc15;
+      cursor: pointer;
+    }
+
+    /* Sections */
+    section {
+      padding: 5rem 0;
+      border-bottom: 1px solid rgba(250, 204, 21, 0.1);
+    }
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 2.5rem;
+      text-align: center;
+      background: linear-gradient(135deg, #ffffff, #facc15);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      position: relative;
+    }
+    .section-title:after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(90deg, #facc15, transparent);
+      margin: 0.8rem auto 0;
+      border-radius: 4px;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, rgba(109, 40, 217, 0.1), rgba(250, 204, 21, 0.05));
+      backdrop-filter: blur(2px);
+      border-radius: 40px;
+      text-align: center;
+      padding: 3.5rem 2rem;
+      border: 1px solid rgba(250, 204, 21, 0.2);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    }
+    .hero h1 {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+      font-weight: 800;
+    }
+    .hero h1 span {
+      color: #facc15;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto 2rem;
+      color: #cbd5e1;
+    }
+    .btn {
+      display: inline-block;
+      background: linear-gradient(135deg, #facc15, #eab308);
+      color: #0f0c29;
+      padding: 0.9rem 2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: all 0.3s;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(250,204,21,0.3);
+    }
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(250,204,21,0.5);
+    }
+
+    /* Skills progress bars */
+    .skills-wrapper {
+      max-width: 650px;
+      margin: 0 auto;
+    }
+    .skill-item {
+      margin-bottom: 1.8rem;
+    }
+    .skill-label {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      margin-bottom: 0.7rem;
+      font-size: 1.1rem;
+    }
+    .skill-label i {
+      width: 32px;
+      font-size: 1.5rem;
+      color: #facc15;
+    }
+    .progress-bar-bg {
+      background: rgba(255,255,255,0.1);
+      border-radius: 30px;
+      height: 1.5rem;
+      overflow: hidden;
+      backdrop-filter: blur(4px);
+    }
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #facc15, #eab308);
+      width: 0%;
+      border-radius: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding-right: 12px;
+      color: #0f0c29;
+      font-weight: bold;
+      font-size: 0.8rem;
+      transition: width 1.2s cubic-bezier(0.22, 0.97, 0.36, 1);
+    }
+
+    /* Technologies Grid */
+    .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+    .tech-card {
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(10px);
+      padding: 1.3rem;
+      border-radius: 20px;
+      text-align: center;
+      font-weight: 600;
+      transition: all 0.3s;
+      border: 1px solid rgba(250,204,21,0.2);
+    }
+    .tech-card:hover {
+      transform: translateY(-8px);
+      border-color: #facc15;
+      background: rgba(250,204,21,0.1);
+    }
+    .tech-card i {
+      font-size: 2.3rem;
+      margin-bottom: 0.7rem;
+      display: block;
+      color: #facc15;
+    }
+
+    /* Projects */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    .project-card {
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(10px);
+      border-radius: 28px;
+      padding: 1.8rem;
+      transition: all 0.3s;
+      border: 1px solid rgba(250,204,21,0.15);
+    }
+    .project-card:hover {
+      transform: translateY(-6px);
+      border-color: #facc15;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+    }
+    .project-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      color: #facc15;
+    }
+    .project-badge {
+      background: rgba(250,204,21,0.2);
+      color: #facc15;
+      border-radius: 40px;
+      padding: 0.25rem 1rem;
+      font-size: 0.7rem;
+      font-weight: bold;
+      display: inline-block;
+      margin-bottom: 1rem;
+    }
+    .project-link {
+      margin-top: 1.2rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #facc15;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    /* Contact Form */
+    .contact-card {
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(12px);
+      border-radius: 32px;
+      padding: 2rem;
+      max-width: 650px;
+      margin: 0 auto;
+      border: 1px solid rgba(250,204,21,0.2);
+    }
+    .form-group {
+      margin-bottom: 1.3rem;
+    }
+    .form-group input, .form-group textarea {
+      width: 100%;
+      padding: 1rem 1.2rem;
+      background: rgba(0,0,0,0.4);
+      border: 1px solid rgba(250,204,21,0.3);
+      border-radius: 50px;
+      font-family: inherit;
+      color: white;
+      outline: none;
+      transition: 0.2s;
+    }
+    .form-group textarea {
+      border-radius: 25px;
+      resize: vertical;
+    }
+    .form-group input:focus, .form-group textarea:focus {
+      border-color: #facc15;
+      box-shadow: 0 0 0 3px rgba(250,204,21,0.2);
+    }
+    .contact-info {
+      text-align: center;
+      margin-top: 1.8rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(250,204,21,0.2);
+    }
+    .contact-info p {
+      margin: 0.5rem 0;
+    }
+    .contact-info i {
+      color: #facc15;
+      margin-right: 10px;
+    }
+
+    footer {
+      background: rgba(0,0,0,0.5);
+      backdrop-filter: blur(5px);
+      text-align: center;
+      padding: 2rem 0;
+    }
+    .social-links a {
+      color: #e2e8f0;
+      font-size: 1.8rem;
+      margin: 0 0.8rem;
+      transition: all 0.3s;
+      display: inline-block;
+    }
+    .social-links a:hover {
+      color: #facc15;
+      transform: translateY(-4px);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .menu-icon {
+        display: block;
+      }
+      nav ul {
+        flex-direction: column;
+        background: rgba(15, 12, 41, 0.98);
+        backdrop-filter: blur(12px);
+        position: absolute;
+        top: 75px;
+        left: 0;
+        width: 100%;
+        padding: 1.8rem;
+        gap: 1.3rem;
+        text-align: center;
+        transform: translateY(-200%);
+        transition: transform 0.4s ease;
+        z-index: 999;
+        border-bottom: 2px solid #facc15;
+      }
+      nav ul.show {
+        transform: translateY(0);
+      }
+      .hero h1 {
+        font-size: 1.9rem;
+      }
+      .section-title {
+        font-size: 2rem;
+      }
+    }
+    .error-msg {
+      color: #f87171;
+      font-size: 0.85rem;
+      margin-top: 5px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-flex">
+    <div class="logo">
+      <div class="logo-img">
+        <i class="fas fa-code"></i>
+      </div>
+      <div class="logo-text">Vibrant <span>Tech Solutions</span></div>
+    </div>
+    <button class="menu-icon" id="menuToggle" aria-label="Menu"><i class="fas fa-bars"></i></button>
+    <nav id="navLinks">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#technologies">Tech Stack</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section id="home">
+    <div class="container">
+      <div class="hero">
+        <h1>Hi, I’m <span>Ibrahim M'mangeni</span></h1>
+        <p>A passionate <strong>Full Stack Developer</strong> and founder of <strong>Vibrant Tech Solutions</strong>. I build scalable web applications with React, Next.js, Python, and cutting-edge technologies.</p>
+        <a href="#contact" class="btn">Let's Work Together <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title">About Vibrant Tech Solutions</h2>
+      <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+        <p style="font-size: 1.1rem; margin-bottom: 1.5rem;"><strong>Vibrant Tech Solutions</strong> is dedicated to building innovative digital tools that empower communities. We focus on clean UI, performance, and meaningful impact.</p>
+        <p style="margin-bottom: 1.2rem;">Ibrahim is currently leading two groundbreaking projects: <strong>Malawi Emergency Alert Network (MEAN)</strong> – real-time emergency alerts system, and the <strong>Islamic Learning App</strong> – an interactive platform for Quranic learning. Both projects are in active development and will revolutionize community safety and spiritual education.</p>
+        <p>With expertise in full-stack development, API integration, and modern frameworks, Ibrahim delivers solutions that are both powerful and user-friendly.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="container">
+      <h2 class="section-title">Technical Proficiency</h2>
+      <div class="skills-wrapper">
+        <div class="skill-item">
+          <div class="skill-label"><i class="fab fa-react"></i> React.js</div>
+          <div class="progress-bar-bg"><div class="progress-fill" data-width="90">90%</div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-label"><i class="fab fa-js"></i> Next.js</div>
+          <div class="progress-bar-bg"><div class="progress-fill" data-width="85">85%</div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-label"><i class="fab fa-python"></i> Python</div>
+          <div class="progress-bar-bg"><div class="progress-fill" data-width="80">80%</div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-label"><i class="fab fa-css3-alt"></i> Tailwind CSS</div>
+          <div class="progress-bar-bg"><div class="progress-fill" data-width="75">75%</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="technologies">
+    <div class="container">
+      <h2 class="section-title">Technologies & Tools</h2>
+      <div class="tech-grid">
+        <div class="tech-card"><i class="fab fa-react"></i> React</div>
+        <div class="tech-card"><i class="fab fa-js"></i> Next.js</div>
+        <div class="tech-card"><i class="fab fa-python"></i> Python</div>
+        <div class="tech-card"><i class="fab fa-node-js"></i> Node.js</div>
+        <div class="tech-card"><i class="fab fa-css3-alt"></i> Tailwind CSS</div>
+        <div class="tech-card"><i class="fab fa-git-alt"></i> Git/GitHub</div>
+        <div class="tech-card"><i class="fas fa-cloud"></i> REST APIs</div>
+        <div class="tech-card"><i class="fas fa-lock"></i> JWT Auth</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="container">
+      <h2 class="section-title">Featured Projects</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <div class="project-badge"><i class="fas fa-rocket"></i> In Progress</div>
+          <h3>Malawi Emergency Alert Network</h3>
+          <p>Real-time emergency alert system for natural disasters & public safety. Built with Next.js, Node.js, and Firebase. <strong>Impact-driven solution for Malawi.</strong></p>
+        </div>
+        <div class="project-card">
+          <div class="project-badge"><i class="fas fa-book-quran"></i> In Progress</div>
+          <h3>Islamic Learning App</h3>
+          <p>Interactive platform for Quran reading practice, tajweed rules, and progress tracking. Mobile-first design with gamified learning.</p>
+        </div>
+        <div class="project-card">
+          <div class="project-badge"><i class="fas fa-globe"></i> Live</div>
+          <h3>Unlock Corner</h3>
+          <p>Professional phone flashing & unlocking services website. Fast, secure, and fully responsive.</p>
+          <a href="https://unlockcorner.netlify.app" target="_blank" class="project-link">Visit Live <i class="fas fa-external-link-alt"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title">Get In Touch</h2>
+      <div class="contact-card">
+        <form id="contactForm">
+          <div class="form-group">
+            <input type="text" id="name" placeholder="Your Full Name" required>
+          </div>
+          <div class="form-group">
+            <input type="email" id="email" placeholder="Email Address" required>
+          </div>
+          <div class="form-group">
+            <textarea id="message" rows="4" placeholder="Your Message..." required></textarea>
+          </div>
+          <button type="submit" class="btn" style="width:100%; background:#facc15; color:#0f0c29;">Send via WhatsApp <i class="fab fa-whatsapp"></i></button>
+          <div id="formFeedback" style="margin-top: 1rem;"></div>
+        </form>
+        <div class="contact-info">
+          <p><i class="fas fa-envelope"></i> ibraheemvibrant@gmail.com</p>
+          <p><i class="fab fa-whatsapp"></i> +265 981 142 835</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="social-links">
+      <a href="https://github.com/ibraheemvibrant" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/ibrahim-mmangeni-85aa88282" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="https://wa.me/265981142835" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    </div>
+    <p style="margin-top: 1.5rem;">&copy; 2025 Vibrant Tech Solutions. All rights reserved. | Full Stack Developer</p>
+  </div>
+</footer>
+
+<script>
+  // Mobile Navigation Toggle
+  const menuToggle = document.getElementById('menuToggle');
+  const navUl = document.querySelector('#navLinks ul');
+  function toggleNav() { navUl.classList.toggle('show'); }
+  menuToggle.addEventListener('click', toggleNav);
+  document.querySelectorAll('#navLinks ul li a').forEach(link => {
+    link.addEventListener('click', () => { if (window.innerWidth <= 768) navUl.classList.remove('show'); });
+  });
+  window.addEventListener('resize', () => { if (window.innerWidth > 768) navUl.classList.remove('show'); });
+
+  // Progress Bar Animation on Scroll
+  const progressBars = document.querySelectorAll('.progress-fill');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const fill = entry.target;
+        const width = fill.getAttribute('data-width');
+        fill.style.width = width + '%';
+        fill.textContent = width + '%';
+        observer.unobserve(fill);
+      }
+    });
+  }, { threshold: 0.4 });
+  progressBars.forEach(bar => observer.observe(bar));
+
+  // Smooth Anchor Scroll with offset
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const targetId = this.getAttribute('href');
+      if (targetId === "#" || targetId === "") return;
+      const target = document.querySelector(targetId);
+      if (target) {
+        e.preventDefault();
+        const offset = 70;
+        const pos = target.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({ top: pos, behavior: 'smooth' });
+      }
+    });
+  });
+
+  // Contact Form - WhatsApp Redirection (FULLY WORKING)
+  const form = document.getElementById('contactForm');
+  const feedbackDiv = document.getElementById('formFeedback');
+  const whatsappNumber = "265981142835";
+  const emailAddress = "ibraheemvibrant@gmail.com";
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+
+    if (!name || !email || !message) {
+      feedbackDiv.innerHTML = '<div class="error-msg"><i class="fas fa-exclamation-circle"></i> Please fill in all fields.</div>';
+      setTimeout(() => feedbackDiv.innerHTML = '', 3000);
+      return;
+    }
+    const emailPattern = /^[^\s@]+@([^\s@]+\.)+[^\s@]+$/;
+    if (!emailPattern.test(email)) {
+      feedbackDiv.innerHTML = '<div class="error-msg"><i class="fas fa-envelope"></i> Valid email required.</div>';
+      setTimeout(() => feedbackDiv.innerHTML = '', 3000);
+      return;
+    }
+
+    // Create whatsapp message content
+    const whatsappMsg = `Hello Ibrahim!%0A%0A*Name:* ${encodeURIComponent(name)}%0A*Email:* ${encodeURIComponent(email)}%0A*Message:* ${encodeURIComponent(message)}%0A%0AFrom Vibrant Tech Solutions Portfolio`;
+    const waLink = `https://wa.me/${whatsappNumber}?text=${whatsappMsg}`;
+    
+    // Open WhatsApp chat
+    window.open(waLink, '_blank');
+    
+    // Show success feedback
+    feedbackDiv.innerHTML = '<div style="background: #10b981; padding: 0.8rem; border-radius: 50px; text-align: center; color: white;"><i class="fab fa-whatsapp"></i> Redirecting to WhatsApp... Thank you for reaching out!</div>';
+    
+    // Reset form after 1 second
+    setTimeout(() => {
+      form.reset();
+      setTimeout(() => feedbackDiv.innerHTML = '', 4000);
+    }, 1000);
+  });
+</script>
+</body>
+</html>
